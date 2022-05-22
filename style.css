@@ -63,6 +63,12 @@
     width: 500px;
     height: 750px;
 }
+.text
+{
+    padding-top: 15px;
+    font-size: large;
+    vertical-align: middle;
+}
 .displaying input
 {
     text-align: center;

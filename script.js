@@ -37,9 +37,9 @@ const allbtn=document.querySelectorAll(".btn");
 //to check and correct if image title is too big
 const check=(title)=>
 {
-    if(title.length>38)
+    if(title.length>22)
     {
-        let s1=title.substring(0,20);
+        let s1=title.substring(0,12);
         let s2="...";
         let s3=title.substring(title.length-10);
         return s1+s2+s3;
@@ -50,27 +50,27 @@ const check=(title)=>
 btn1.innerHTML=
 `
     <img class="btnimg" id="img1" src=${images[0].previewImage} alt="">
-    ${check(titles[0])}
+    <div class="text">${check(titles[0])}</div>
 `
 btn2.innerHTML=
 `
     <img class="btnimg" id="img2" src=${images[1].previewImage} alt="">
-    ${check(titles[1])}
+    <div class="text">${check(titles[1])}</div>
 `
 btn3.innerHTML=
 `
     <img class="btnimg" id="img3" src=${images[2].previewImage} alt="">
-    ${check(titles[2])}
+    <div class="text">${check(titles[2])}</div>
 `
 btn4.innerHTML=
 `
     <img class="btnimg" id="img4" src=${images[3].previewImage} alt="">
-    ${check(titles[3])}
+    <div class="text">${check(titles[3])}</div>
 `
 btn5.innerHTML=
 `
     <img class="btnimg" id="img5" src=${images[4].previewImage} alt="">
-    ${check(titles[4])}
+    <div class="text">${check(titles[4])}</div>
 `
 disp.src=images[0].previewImage;
 caption.value=titles[0];
@@ -160,35 +160,35 @@ const call=()=>
     {
         btn1.innerHTML=`
             <img class="btnimg" id="img1" src=${images[i].previewImage} alt="">
-            ${check(titles[i])}
+            <div class="text">${check(titles[i])}</div>
         `
     }
     else if(i===1)
     {
         btn2.innerHTML=`
             <img class="btnimg" id="img2" src=${images[i].previewImage} alt="">
-            ${check(titles[i])}
+            <div class="text">${check(titles[i])}</div>
         `
     }
     else if(i===2)
     {
         btn3.innerHTML=`
             <img class="btnimg" id="img3" src=${images[i].previewImage} alt="">
-            ${check(titles[i])}
+            <div class="text">${check(titles[i])}</div>
         `
     }
     else if(i===3)
     {
         btn4.innerHTML=`
             <img class="btnimg" id="img4" src=${images[i].previewImage} alt="">
-            ${check(titles[i])}
+            <div class="text">${check(titles[i])}</div>
         `
     }
     else if(i===4)
     {
         btn5.innerHTML=`
             <img class="btnimg" id="img5" src=${images[i].previewImage} alt="">
-            ${check(titles[i])}
+            <div class="text">${check(titles[i])}</div>
         `
     }
 }
