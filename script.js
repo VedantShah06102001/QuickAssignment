@@ -46,18 +46,6 @@ const check=(title)=>
     }
     return title;
 }
-//to check and correct if image caption is too big
-const checkCaption=(caption)=>
-{
-    if(caption.length>50)
-    {
-        let s1=caption.substring(0,35);
-        let s2="...";
-        let s3=caption.substring(caption.length-6);
-        return s1+s2+s3;
-    }
-    return caption;
-}
 //initial loading of images
 btn1.innerHTML=
 `
@@ -85,7 +73,7 @@ btn5.innerHTML=
     ${check(titles[4])}
 `
 disp.src=images[0].previewImage;
-caption.value=checkCaption(titles[0]);
+caption.value=titles[0];
 btn1.style.backgroundColor="#1E90FF";
 //change the image with click functionality
 btn1.addEventListener("click",()=>
@@ -152,7 +140,7 @@ document.addEventListener('keydown',(e)=>
 const call=()=>
 {
     disp.src=images[i].previewImage;
-    caption.value=checkCaption(titles[i]);
+    caption.value=titles[i];
     //to change the background blue of the selected image
     allbtn.forEach((Element)=>
     {
