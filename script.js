@@ -20,12 +20,12 @@ const images=[
         "title": "interns-performance-report-may-2022.key"
     }
 ];
-const titles=[];
+const titles=[];//to store the title 
 for(let i=0;i<5;i++)
 {
     titles[i]=images[i].title;
 }
-var i=0,flag=0;
+var i=0;
 const btn1=document.querySelector("#id0");
 const btn2=document.querySelector("#id1");
 const btn3=document.querySelector("#id2");
@@ -34,19 +34,19 @@ const btn5=document.querySelector("#id4");
 const disp=document.querySelector(".displaying img");
 const caption=document.querySelector(".displaying input");
 const allbtn=document.querySelectorAll(".btn");
+//to check and correct if image title is too big
 const check=(title)=>
 {
-    //console.log(title);
     if(title.length>38)
     {
         let s1=title.substring(0,20);
         let s2="...";
         let s3=title.substring(title.length-10);
-        //console.log(s1+s2+s3);
         return s1+s2+s3;
     }
     return title;
 }
+//to check and correct if image caption is too big
 const checkCaption=(caption)=>
 {
     if(caption.length>50)
@@ -58,6 +58,7 @@ const checkCaption=(caption)=>
     }
     return caption;
 }
+//initial loading of images
 btn1.innerHTML=
 `
     <img class="btnimg" id="img1" src=${images[0].previewImage} alt="">
@@ -86,6 +87,7 @@ btn5.innerHTML=
 disp.src=images[0].previewImage;
 caption.value=checkCaption(titles[0]);
 btn1.style.backgroundColor="#1E90FF";
+//change the image with click functionality
 btn1.addEventListener("click",()=>
 {
     i=0;
@@ -111,13 +113,13 @@ btn5.addEventListener("click",()=>
     i=4;
     call();
 })
-// console.log(i);
+//to change the caption
 caption.addEventListener("change",(Element)=>
 {
-    //console.log(Element);
     titles[i]=Element.target.value;
     call();
 })
+//for up and down key functionality
 document.addEventListener('keydown',(e)=>
 {
     //console.log(e.key);
@@ -146,11 +148,12 @@ document.addEventListener('keydown',(e)=>
         call();
     }
 })
+//This is the function which is call every time when index changes and put everything right
 const call=()=>
 {
     disp.src=images[i].previewImage;
     caption.value=checkCaption(titles[i]);
-    // console.log(allbtn);
+    //to change the background blue of the selected image
     allbtn.forEach((Element)=>
     {
         // console.log(Element);
