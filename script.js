@@ -37,25 +37,25 @@ const allbtn=document.querySelectorAll(".btn");
 //to check and correct if image title is too big
 const check=(title)=>
 {
-    if(title.length>22)
-    {
-        let s1=title.substring(0,12);
-        let s2="...";
-        let s3=title.substring(title.length-10);
-        return s1+s2+s3;
-    }
+    // if(title.length>22)
+    // {
+    //     let s1=title.substring(0,12);
+    //     let s2="...";
+    //     let s3=title.substring(title.length-10);
+    //     return s1+s2+s3;
+    // }
     return title;
 }
 //initial loading of images
 btn1.innerHTML=
 `
     <img class="btnimg" id="img1" src=${images[0].previewImage} alt="">
-    <div class="text">${check(titles[0])}</div>
+    <div class="text" id="text1">${check(titles[0])}</div>
 `
 btn2.innerHTML=
 `
     <img class="btnimg" id="img2" src=${images[1].previewImage} alt="">
-    <div class="text">${check(titles[1])}</div>
+    <div class="text" class="overflow-ellipsis">${check(titles[1])}</div>
 `
 btn3.innerHTML=
 `
@@ -167,7 +167,7 @@ const call=()=>
     {
         btn2.innerHTML=`
             <img class="btnimg" id="img2" src=${images[i].previewImage} alt="">
-            <div class="text">${check(titles[i])}</div>
+            <div class="text" id="text2">${check(titles[i])}</div>
         `
     }
     else if(i===2)

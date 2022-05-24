@@ -68,6 +68,9 @@
     padding-top: 15px;
     font-size: large;
     vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: " [..] ";
 }
 .displaying input
 {
