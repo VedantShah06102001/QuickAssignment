@@ -70,7 +70,7 @@
     vertical-align: middle;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: " [..] ";
+    text-overflow: ellipsis;
 }
 .displaying input
 {
